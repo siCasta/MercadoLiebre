@@ -7,8 +7,22 @@ const publicPath = path.join(__dirname, '/public');
 app.use(express.static(publicPath));
 
 app.get('/', (req, res) => {
-    pathHTML = path.join(__dirname, '/views/home.html');
+  pathHTML = path.join(__dirname, '/views/home.html');
   res.sendFile(path.join(pathHTML));
+});
+
+app.get('/register', (req, res) => {
+  pathHTML = path.join(__dirname, '/views/register.html');
+  res.sendFile(path.join(pathHTML));
+});
+
+app.get('/login', (req, res) => {
+  pathHTML = path.join(__dirname, '/views/login.html');
+  res.sendFile(path.join(pathHTML));
+});
+
+app.post('/login', (req, res) => {
+  res.redirect('/');
 });
 
 app.listen(3000, () => {

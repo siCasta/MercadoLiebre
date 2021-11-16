@@ -39,12 +39,7 @@ header nav{
 
 header ul {
     list-style: none;
-    margin-bottom: 10px;
     display: inline-block;
-}
-
-header ul li {
-    margin-bottom: 5px;
 }
 
 header ul li a {
@@ -78,10 +73,28 @@ header img {
 
 /* main */
 
+.pre-desc {
+    display: flex;
+}
+
+main section article i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+    }
+
 main {
     background-color: #ebebeb;
     padding-bottom: 20px;
-    width: 90vw;
+    width: 100vw;
     margin: 0 auto;
 }
 
@@ -92,17 +105,32 @@ main section {
 
 main section article {
     background-color: #fff;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 main section article .general-articulo {
     border-top: 1px solid #ebebeb;
     padding: 15px;
+    position: relative;
 }
 
 main section article h3 {
     display: none;
     color: #666;
+    margin: 10px 5px;
+}
+
+main section article .pre-desc .precios {
+    width: 30%;
+}
+
+main section article .pre-desc .descuentos {
+    width: 70%;
+}
+
+main section article p {
+    margin: 0 5px;
+    align-self: flex-end;
 }
 
 main section article img {
@@ -143,7 +171,21 @@ footer i {
     }
 
     header nav {
-        display: block;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    
+
+    header nav ul li {
+        padding: 20px 10px;
     }
 }
 
@@ -157,6 +199,19 @@ footer i {
     }
 
     header nav {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    header nav ul li {
+        padding: 20px 10px;
     }
 }
