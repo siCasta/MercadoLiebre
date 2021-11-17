@@ -1,30 +1,20 @@
 const express = require('express');
-const path = require('path');
 const app = express();
+app.use(express.static('public'));
 
-const publicPath = path.join(__dirname, '/public');
 
-app.use(express.static(publicPath));
-
-app.get('/', (req, res) => {
-  pathHTML = path.join(__dirname, '/views/home.html');
-  res.sendFile(path.join(pathHTML));
+app.listen(3000, ()=>{
+    console.log('Servidor funcionando');
 });
 
-app.get('/register', (req, res) => {
-  pathHTML = path.join(__dirname, '/views/register.html');
-  res.sendFile(path.join(pathHTML));
+app.get('/', (req,res)=>{
+    res.sendFile(__dirname + '/views/home.html');
 });
 
-app.get('/login', (req, res) => {
-  pathHTML = path.join(__dirname, '/views/login.html');
-  res.sendFile(path.join(pathHTML));
+app.get('/login', (req,res)=>{
+    res.sendFile(__dirname + '/views/login.html');
 });
 
-app.post('/login', (req, res) => {
-  res.redirect('/');
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.get('/register', (req,res)=>{
+    res.sendFile(__dirname + '/views/register.html');
 });
