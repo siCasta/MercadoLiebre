@@ -89,7 +89,12 @@ div.burger-menu i{
     margin: 10px 0px 20px 0px;
     padding: 10px;
     width: 40px;
+    transition: all ease 0.5s;
 }
+
+main section article:hover i {
+    transform: rotate(-90deg);
+  }
 
 div.last-visit,
 div.offers{
@@ -173,12 +178,31 @@ article div.main-article{
     padding: 15px;
 }
 
+/* footer */
+
+footer {
+    text-align: center;
+}
+
+footer section {
+    margin: 50px auto;
+    width: 90%;
+    text-align: center;
+}
+
+footer i {
+    color: #1259c3;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+
 @media (min-width: 361px){
     main section article .description{
         display: block;
     }
 
-    main section article{
+    main section article:hover{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
@@ -203,5 +227,16 @@ article div.main-article{
 @media (min-width: 769px){
     main section div.products article{
         width: 22%;
+    }
+    main section article h4 {
+        display: none !important;
+    }
+    
+    footer {
+        display: flex;
+    }
+    
+    main section article:hover h4 {
+        display: block !important;
     }
 }
